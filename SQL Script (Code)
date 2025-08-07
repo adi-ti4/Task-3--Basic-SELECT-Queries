@@ -1,0 +1,49 @@
+-- Selecting details from teacher_details table
+
+Select * from teacher_details;
+
+-- Extracting details using Where Clause with OR
+Select t_Name, Age, Salary from teacher_details WHERE Salary >= 50000 OR Age >= 40;
+
+-- Adding a column and its details
+ALTER TABLE teacher_details ADD COLUMN Gender Varchar(10);
+
+UPDATE teacher_details
+SET Gender = CASE Teacher_Id
+    WHEN 1 THEN 'Male'
+    WHEN 2 THEN 'Female'
+    WHEN 4 THEN 'Female'
+    WHEN 5 THEN 'Female'
+    WHEN 6 THEN 'Male'
+    WHEN 7 THEN 'Female'
+    WHEN 8 THEN 'Male'
+    WHEN 9 THEN 'Female'
+    WHEN 10 THEN 'Female'
+    WHEN 11 THEN 'Female'
+    WHEN 12 THEN 'Male'
+    WHEN 13 THEN 'Male'
+    WHEN 14 THEN 'Female'
+    WHEN 15 THEN 'Female'
+    WHEN 16 THEN 'Female'
+END
+WHERE Teacher_Id IN (1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
+
+Select * from teacher_details;
+
+-- Extracting details using AND, BETWEEN, LIKE, ORDER BY, LIMIT, ASC and DSC
+Select t_Name, Department, Salary from teacher_details WHERE Salary <= 45000 AND Department = 'Literature';
+
+SELECT * from teacher_details WHERE Age Between 30 And 40;
+
+SELECT * from teacher_details WHERE Age >=50;
+
+SELECT * from teacher_details WHERE t_name LIKE 'S%';
+
+SELECT * from teacher_details ORDER BY Department ASC;
+
+SELECT * from teacher_details LIMIT 5;
+
+SELECT * from teacher_details ORDER BY SALARY DESC LIMIT 10;
+
+
+
