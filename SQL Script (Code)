@@ -45,5 +45,7 @@ SELECT * from teacher_details LIMIT 5;
 
 SELECT * from teacher_details ORDER BY SALARY DESC LIMIT 10;
 
+SELECT * from teacher_details WHERE GENDER= 'Male';
+
 
 
